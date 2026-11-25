@@ -21,8 +21,8 @@ process SMARTPCA {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine in ['singularity', 'apptainer'] && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/YOUR-TOOL-HERE':
-        'quay.io/biocontainers/YOUR-TOOL-HERE' }"
+        'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/07/073a87532f88845132a575101cfb4d0025786ac1f3fb56314938a2523d0d0af8/data':
+        'community.wave.seqera.io/library/eigensoft:9.0.0--1ff6eea74cf655bf' }"
 
     input:
     tuple val(meta), path(geno), path(snp), path(ind)
